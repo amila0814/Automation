@@ -1,0 +1,152 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#Author: amarasingheai@gmail.com"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 10494742200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BeforeActions.setUp()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "validate search option",
+        "description": "",
+        "id": "testing-to-validate-search-option-in-the-home-page;validate-search-option",
+        "after": [
+          {
+            "result": {
+              "duration": 852982600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AfterActions.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7625305500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am on the Home Page \"http://www.nintex.com\" of Nintex website",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://www.nintex.com",
+                  "offset": 23
+                }
+              ],
+              "location": "LanguageSelectorSteps.i_am_on_the_Home_Page_of_MalindoAir_website(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 218293100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I click on search icon",
+            "match": {
+              "location": "SearchOptionSteps.i_click_on_search_icon()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 30370142600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I should see new popup window and enter search parameter as \"automation\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "automation",
+                  "offset": 61
+                }
+              ],
+              "location": "SearchOptionSteps.i_should_see_new_popup_window_and_enter_search_parameter_as(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2971831100,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "click on submit button",
+            "match": {
+              "location": "SearchOptionSteps.click_on_submit_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 155200,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I should see list of search results on the result page",
+            "match": {
+              "location": "SearchOptionSteps.i_should_see_list_of_search_results_on_the_result_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 88985900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the search result page title should be \"You searched for automation - Nintex\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "You searched for automation - Nintex",
+                  "offset": 40
+                }
+              ],
+              "location": "SearchOptionSteps.the_search_result_page_title_should_be(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@Search-Option-automation"
+          }
+        ]
+      }
+    ],
+    "name": "Testing to validate search option in the home page",
+    "description": "In order to validate that",
+    "id": "testing-to-validate-search-option-in-the-home-page",
+    "keyword": "Feature",
+    "uri": "SearchOption.feature",
+    "tags": [
+      {
+        "line": 2,
+        "name": "@Search-Option"
+      }
+    ]
+  }
+]
