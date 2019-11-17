@@ -19,7 +19,7 @@ public class SearchOptionLocators {
 	@FindBy(how=How.XPATH, using = "//*[@id=\"footer-search-form\"]")
 	public WebElement popUpWindow;
 	
-	@FindBy(how=How.XPATH, using = "//*[@id=\"search\"]/div[4]/div[2]/div[6]/div[2]/span[1]/span/text()[1]")
+	@FindBy(how=How.XPATH, using = "//*[@id=\"search\"]/div[4]/div[2]/div[6]/div[2]/span[1]/span")
 	public WebElement resultLable;
 	
 	

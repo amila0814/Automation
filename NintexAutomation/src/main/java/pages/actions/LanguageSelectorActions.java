@@ -5,9 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import pages.locators.LanguageSelectorLocators;
+import utils.Helper;
 import utils.SeleniumDriver;
 
-public class LanguageSelectorActions {
+public class LanguageSelectorActions extends Helper {
 	
 	LanguageSelectorLocators languageSelectorLocators = null;
 	
@@ -32,7 +33,7 @@ public class LanguageSelectorActions {
 	
 	public void selectJapaniesLanguage() {
 		
-		languageSelectorLocators.japaniesLanguage.click();
+		click(languageSelectorLocators.japaniesLanguage);
 		
 	}
 	

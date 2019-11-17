@@ -1,12 +1,13 @@
 package pages.actions;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.PageFactory;
 
 import pages.locators.SearchOptionLocators;
+import utils.Helper;
 import utils.SeleniumDriver;
 
-public class SearchOptionActions {
+
+public class SearchOptionActions extends Helper {
 
 	SearchOptionLocators searchOptionLocators = null;
 
@@ -18,33 +19,34 @@ public class SearchOptionActions {
 
 	public void clickOnHomeSearchButton() {
 
-		searchOptionLocators.homeSearchButton.click();
+		click(searchOptionLocators.homeSearchButton);
 
 	}
 
 	public void keyInSearchParameter(String searchText) {
 
-		searchOptionLocators.searchTextBox.sendKeys(searchText);
+		type(searchOptionLocators.searchTextBox,searchText);
 
 	}
 
 	public void popUpWindow() {
 
-		searchOptionLocators.popUpWindow.isDisplayed();
+		display(searchOptionLocators.popUpWindow);
 
 	}
 
 
 	public void clickOnPopUpSearchButton() {
 
-		searchOptionLocators.popUpSearchButton.click();
+		click(searchOptionLocators.popUpSearchButton);
 
 	} 
-	
-	public void searchResults() {
-		
-		searchOptionLocators.resultLable.isDisplayed();
-		
+
+	public String searchResults() {
+
+	//	display(searchOptionLocators.resultLable);
+	return	searchOptionLocators.resultLable.getText();
+
 	}
 
 }

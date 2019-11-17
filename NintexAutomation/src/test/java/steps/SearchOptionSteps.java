@@ -1,6 +1,5 @@
 package steps;
 
-import org.openqa.selenium.Alert;
 import org.testng.Assert;
 
 import cucumber.api.java.en.And;
@@ -12,7 +11,7 @@ import utils.SeleniumDriver;
 public class SearchOptionSteps {
 
 	SearchOptionActions searchOptionActions = new SearchOptionActions();
-
+	
 
 	@When("^I click on search icon$")
 	public void i_click_on_search_icon() throws Throwable {
@@ -27,7 +26,7 @@ public class SearchOptionSteps {
 		searchOptionActions.popUpWindow();
 
 		searchOptionActions.keyInSearchParameter(searchText);
-
+		
 	}
 
 	@And("^click on submit button$")
@@ -39,8 +38,9 @@ public class SearchOptionSteps {
 
 	@Then("^I should see list of search \"([^\"]*)\" on the result page$")
 	public void i_should_see_list_of_search_on_the_result_page(String resultTag) throws Throwable {
-
-	
+		
+		String s = searchOptionActions.searchResults(); System.out.println(s);
+		Assert.assertTrue(s.contains(resultTag));
 
 	}
 

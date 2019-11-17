@@ -9,7 +9,7 @@ Feature: Testing to validate search option in the home page
     When I click on search icon
     And I should see new popup window and enter search parameter as "automation"
     And click on submit button
-    Then I should see list of search "results" on the result page
+    Then I should see list of search "results " on the result page
     And the search result page title should be "You searched for automation - Nintex"
     
     
