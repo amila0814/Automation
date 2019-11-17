@@ -1,5 +1,6 @@
 package pages.actions;
 
+
 import org.openqa.selenium.support.PageFactory;
 
 import pages.locators.SearchOptionLocators;
@@ -41,12 +42,24 @@ public class SearchOptionActions extends Helper {
 		click(searchOptionLocators.popUpSearchButton);
 
 	} 
-
-	public String searchResults() {
-
-	//	display(searchOptionLocators.resultLable);
-	return	searchOptionLocators.resultLable.getText();
-
+ 
+	public void waitSearchResult() {
+		waitForVisibilityOf(searchOptionLocators.searchResultLabel);
 	}
-
+	
+	public void searchResults(String searchresultsLbl) {
+		
+		verifyLabel(searchresultsLbl,searchOptionLocators.searchResultLabel);
+	
+	}
+	
+	public void pageLocalLbl(String localLanquage) {
+		
+		verifyLabel(localLanquage,searchOptionLocators.pageLocal);
+	}
+	
+	public void waitlocalLblpresent() {
+		waitForVisibilityOf(searchOptionLocators.pageLocal);
+	}
+	
 }

@@ -6,21 +6,23 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.actions.SearchOptionActions;
+import pages.locators.SearchOptionLocators;
 import utils.SeleniumDriver;
 
 public class SearchOptionSteps {
 
 	SearchOptionActions searchOptionActions = new SearchOptionActions();
+	SearchOptionLocators searchOptionLocators = new SearchOptionLocators();
 	
 
-	@When("^I click on search icon$")
-	public void i_click_on_search_icon() throws Throwable {
+	@When("^User clicks on search icon$")
+	public void user_clicks_on_search_icon() throws Throwable {
 
 		searchOptionActions.clickOnHomeSearchButton();
 	}
 
-	@And("^I should see new popup window and enter search parameter as \"([^\"]*)\"$")
-	public void i_should_see_new_popup_window_and_enter_search_parameter_as(String searchText) throws Throwable {
+	@And("^User should see new popup window and enter search parameter as \"([^\"]*)\"$")
+	public void user_should_see_new_popup_window_and_enter_search_parameter_as(String searchText) throws Throwable {
 
 
 		searchOptionActions.popUpWindow();
@@ -29,18 +31,17 @@ public class SearchOptionSteps {
 		
 	}
 
-	@And("^click on submit button$")
-	public void click_on_submit_button() throws Throwable {
+	@And("^User clicks on submit button$")
+	public void user_clicks_on_submit_button() throws Throwable {
 
 		searchOptionActions.clickOnPopUpSearchButton();
 
 	}
 
-	@Then("^I should see list of search \"([^\"]*)\" on the result page$")
-	public void i_should_see_list_of_search_on_the_result_page(String resultTag) throws Throwable {
-		
-		String s = searchOptionActions.searchResults(); System.out.println(s);
-		Assert.assertTrue(s.contains(resultTag));
+	@Then("^User should see list of search \"([^\"]*)\" on the result page$")
+	public void user_should_see_list_of_search_on_the_result_page(String resultLbl) throws Throwable {
+		searchOptionActions.waitSearchResult();
+		searchOptionActions.searchResults(resultLbl);
 
 	}
 
@@ -50,6 +51,13 @@ public class SearchOptionSteps {
 		String actualTitle = SeleniumDriver.getDriver().getTitle();
 		Assert.assertEquals(actualTitle, expectdTitle);
 
+	}
+	
+	@Then("^the local should be selectced as \"([^\"]*)\"$")
+	public void the_local_should_be_selectced_as(String pageLocal) throws Throwable {
+		searchOptionActions.waitlocalLblpresent();
+		searchOptionActions.pageLocalLbl(pageLocal);
+	    
 	}
 
 }

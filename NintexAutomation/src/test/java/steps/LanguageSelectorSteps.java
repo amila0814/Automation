@@ -16,37 +16,37 @@ public class LanguageSelectorSteps {
 
 	LanguageSelectorActions languageSelectorActions = new LanguageSelectorActions();
 
-	@Given("^I am on the Home Page \"([^\"]*)\" of Nintex website$")
-	public void i_am_on_the_Home_Page_of_Nintex_website(String websiteURL) throws Throwable {
+	@Given("^User navigates to the home page \"([^\"]*)\" of Nintex website$")
+	public void user_navigates_to_the_home_page_of_Nintex_website(String websiteURL) throws Throwable {
 
 		SeleniumDriver.openPage(websiteURL);
 
 	}
 
-	@When("^I move to the language menu$")
-	public void i_move_to_the_language_menu(List<String> lang) throws Throwable {
+	@When("^User moves to the language menu$")
+	public void user_moves_to_the_language_menu(List<String> lang) throws Throwable {
 
 		String menu = lang.get(4);
 		languageSelectorActions.moveToLanguageSelectorMenu();
 
 	}
 
-	@And("^I move to Japanies language option$")
-	public void i_move_to_Japanies_language_option() throws Throwable {
+	@And("^User moves to Japanies language option$")
+	public void user_moves_to_Japanies_language_option() throws Throwable {
 
 		languageSelectorActions.moveToJapaniesLanguage();
 
 	}
 
-	@And("^click on \"([^\"]*)\" link$")
-	public void click_on_link(String arg1) throws Throwable {
+	@And("^User clicks on \"([^\"]*)\" link$")
+	public void user_clicks_on_link(String arg1) throws Throwable {
 
 		languageSelectorActions.selectJapaniesLanguage();
 
 	}
 
-	@Then("^I should see new tab open with japanies language$")
-	public void i_should_see_new_tab_open_with_japanies_language() throws Throwable {
+	@Then("^User should see new tab open with japanies language$")
+	public void user_should_see_new_tab_open_with_japanies_language() throws Throwable {
 
 		ArrayList<String> newTab = new ArrayList<String> (SeleniumDriver.getDriver().getWindowHandles());
 		SeleniumDriver.getDriver().switchTo().window(newTab.get(1));

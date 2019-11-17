@@ -5,16 +5,16 @@ Feature: Testing to validate Japanies language selector.
 
   @Language-Selector-Japanies
   Scenario: Validate Japanies language selector
-    Given I am on the Home Page "http://www.nintex.com" of Nintex website
-    When I move to the language menu
+    Given User navigates to the home page "http://www.nintex.com" of Nintex website
+    When User moves to the language menu
     | Menu |
     | EN   |
     | FR   |
     | DE   |
     | JP   | 
-    And I move to Japanies language option
-    And click on "JP" link
-    Then I should see new tab open with japanies language
+    And User moves to Japanies language option
+    And User clicks on "JP" link
+    Then User should see new tab open with japanies language
     And the page title should be "Nintex"
     And the page url shoud be "https://www.nintex.jp/"
     
